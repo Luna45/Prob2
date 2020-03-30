@@ -1,0 +1,11 @@
+"Punto 2------------------------------------------------------------------------
+primero hacemos la funcion binomial ,buscamos P(X<2), hacemos 5000 pruebas con probabilidad 0.00005 que es equivalente al 0.005%
+"
+pbinom(2,5000, 0.00005)#Variable aleatoria binomial
+"
+ahora hacemos la funcion exponencial(Poisson),buscamos P(X<2), con parametro a= 5000X0.00005
+"
+ppois(2, 5000*0.00005)#variable aleatoria Poisson
+
+
+
