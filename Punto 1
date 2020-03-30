@@ -1,0 +1,8 @@
+"Punto 1-------------------------------------------------------------------------------------------------
+Tenemos que por hora llegan 210 automoviles a una estación de gasolina , y sabemos que la
+estación de gasolina puede atender como sumo 10 automoviles al tiempo en un minuto, queremos hallar
+probabilidad de que lleguen mas de 10 automoviles en un momento dado, esto se puede expresar
+como una función exponencial con parametro a=210/60 , y queremos hallar P(X>10)
+"
+ppois(10,3.5,FALSE) #la funcion halla el valor de P(X>10) en una función exponencial con parametro a=3.5
+
