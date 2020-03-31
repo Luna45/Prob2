@@ -1,0 +1,33 @@
+Punto 3-------------------------------------------------------------------------
+Vamos a generar variables aleatorias las cuales tomaran valores entre 0 y 1 , dependiendo de si una coordenada aleatoria cae dentro de el circulo 
+unitario , es decir que la suma al cuadrado de sus coordenadas correspondientes es menor o igual a 3
+"
+Metodo_de_montecarlo <- function(p){
+  
+  lista <- c()#creamos una lista vacia
+  for (f in 1:p)
+  {
+    a <- runif(1,0,1)#generamos la coordenada en x en el primer cuadrante
+    b <- runif(1,0,1)#geeramos la coordenada en y en el primer cuadrante
+    R <-( a^2 + b^2 )#determina si el punto esta dentro de el circulo unitario
+    if (R  <= 1 ){
+      
+      lista <- c(lista,1)#agregamos uno a la lista si esta dentro del circulo
+      
+    }
+    else {
+      
+      lista <- c(lista,0)#agregamos 0 si no esta dentro del circulo
+    }
+   if(f<p){
+     Sn_1 <-sum(lista[1:length(lista)])/length(lista)#hallamos S_n-1
+   }else{
+      S_n=((Sn_1)*(p-1)+lista[p])/(p+1)#Determinamos el valor de S_n teniendo S_n-1 y X_n
+    } 
+  }
+  S_n
+}
+
+y<-Metodo_de_montecarlo(100000)
+4*y #multiplicamos por 4 puesto que y es el valor del circulo unicamente en el primer cuadrante 
+
